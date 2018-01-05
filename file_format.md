@@ -1,8 +1,8 @@
-#Sparkmaker File Format (.wow)
+# Sparkmaker File Format (.wow)
 
 The sparkmaker uses G-files with embedded binary bitmaps for the layers.
 
-##Header
+## Header
 ```
 G21;   				set unit to mm
 G91;				incremental positioning
@@ -13,7 +13,7 @@ G28 Z0;				homing of Z axis
 ;H:854;				| in the follwing the axes of the layer are called W and H
 ```
 
-##Layers
+## Layers
 ```
 ;L:1;				layer number (begins with 1)
 M106 S0;			LED off
@@ -26,7 +26,7 @@ M106 S255;			LED on with intensity 255 ("Exposure Strength Grade")
 G4 S25;				wait for 25s ("Exposure Time Per Layer"/"Bottom Layer Exposure Time")
 ```
 
-##Binary Layer Format
+## Binary Layer Format
 Inbetween the brackets the layer is written as binary bytes. Each pixel is either 0 or 1 and 8 pixel in the W dimension are written as one byte. After 480 pixels (60 bytes) with W = 0 to 479 are written for a line with H=h, the next line with H=h+1 is wirtten the same way.
 
 ```
@@ -36,7 +36,7 @@ W0H0 W1H0 ... W7H0 | W8H0 ... W15H0 |  ...  | W471H0 ... W479H0 | W0H1 ... W7H1 
      Byte 0              Byte 1                     Byte 59           Byte 60
 ``` 
 
-##Footer
+## Footer
 ```
 M106 S0;			LED PWM to 0 --> off
 G1 Z20.0;			lift Z axis by 20mm
