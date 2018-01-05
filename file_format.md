@@ -2,6 +2,9 @@
 
 The sparkmaker uses G-files with embedded binary bitmaps for the layers.
 
+**Disclaimer: My Sparkmaker has not arrived yet and this is all based on working with .wow files only. Although, I was successful in recovering an image of the layer from the binary blob.
+It is provided "AS IS" without warranty of any kind.**
+
 ## Header
 ```
 G21;   				set unit to mm
